@@ -13,7 +13,8 @@
 # Это все попадает под определение "произвольной вещественной матрицы", можем решать с помощью предыдущих заданий.
 
 import numpy as np
-from Axb_6_3 import solve_axb
+
+from hw06.task3 import solve_axb
 
 
 def main():

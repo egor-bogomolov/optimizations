@@ -6,8 +6,9 @@
 # b
 
 import numpy as np
-from cholesky_6_1 import read_matrix_file, read_matrix_input
-from orthogonal_7_1 import mult
+
+from hw06.task1 import read_matrix_file
+from hw07.task1 import mult
 
 
 def solve_symmetric(A, b, precision=1e-9):

@@ -16,7 +16,8 @@
 # Матрица B положительно определенная, потому что на всех позициях с нечетным i+j стоят 0. Решение точно найдется.
 
 import numpy as np
-from Axb_6_3 import solve_axb
+
+from hw06.task3 import solve_axb
 
 
 def get_b(x):

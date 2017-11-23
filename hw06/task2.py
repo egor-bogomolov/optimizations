@@ -4,9 +4,10 @@
 # n m
 # x_i, y_i, по паре на строке, m строк
 
-import numpy as np
 import matplotlib.pyplot as plt
-from Axb_6_3 import solve_axb
+import numpy as np
+
+from hw06.task3 import solve_axb
 
 
 def main():

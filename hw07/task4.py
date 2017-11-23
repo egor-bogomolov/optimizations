@@ -6,8 +6,9 @@
 # b
 
 import numpy as np
-from cholesky_6_1 import read_matrix_file
-from sparsematrix_7_4 import SparseMatrix
+
+from hw06.task1 import read_matrix_file
+from hw07.task4_class import SparseMatrix
 
 
 def mult(v, A, u):

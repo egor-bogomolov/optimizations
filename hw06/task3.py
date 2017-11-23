@@ -6,7 +6,8 @@
 # b
 
 import numpy as np
-from cholesky_6_1 import semicholesky, read_matrix_file, read_matrix_input
+
+from hw06.task1 import semicholesky, read_matrix_file
 
 
 # Минимизирует по x значение ||Ax - b||**2

@@ -6,7 +6,8 @@
 # n строк по n чисел -- матрица A
 
 import numpy as np
-from cholesky_6_1 import read_matrix_file
+
+from hw06.task1 import read_matrix_file
 
 
 def mult(v, A, u):
