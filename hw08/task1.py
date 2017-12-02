@@ -9,9 +9,7 @@ def grad(x):
     return np.array([1. * x[0], 69. * x[1]])
 
 
-def heavy_ball(steps, x_0):
-    m = 1.
-    M = 69.
+def heavy_ball(steps, x_0, m, M):
     alpha = 4. / ((np.sqrt(M) + np.sqrt(m)) ** 2)
     beta = (np.sqrt(M) - np.sqrt(m)) / (np.sqrt(M) + np.sqrt(m))
     x = x_0.copy()
@@ -23,9 +21,7 @@ def heavy_ball(steps, x_0):
     print("Heavy ball:\nx = {0}\nf(x) = {1}".format(x, fun(x)))
 
 
-def nesterov(steps, x_0):
-    m = 1.
-    M = 69.
+def nesterov(steps, x_0, m, M):
     # m != 0, можем пользоваться упрощенной схемой с a_k = sqrt{m/M}
     beta = (np.sqrt(M) - np.sqrt(m)) / (np.sqrt(M) + np.sqrt(m))
     x = x_0.copy()
@@ -42,9 +38,7 @@ def nesterov(steps, x_0):
 # заданном в условии. Таким образом, x_k = P_k * x_0, так и будем рассчитывать.
 # Для подсчета P_k вспомним, что это отношение многочленом Чебышева, для них есть рекуррентная формула. По ней будем
 # считать.
-def chebyshev(steps, x_0):
-    m = 1.
-    M = 69.
+def chebyshev(steps, x_0, m, M):
     A = np.array([[m, 0], [0, M]])
     one = np.identity(2)
     arg_up = (one * (M + m) - 2. * A) / (M - m)
@@ -61,12 +55,14 @@ def chebyshev(steps, x_0):
 
 def main():
     np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
-    x_0 = np.array([-123123, 144523])
+    x_0 = np.array([1, 1])
     print("Starting from x = {0}".format(x_0))
     steps = int(input("Enter number of iterations: "))
-    heavy_ball(steps, x_0)
-    nesterov(steps, x_0)
-    chebyshev(steps, x_0)
+    m = 1.
+    M = 69.
+    heavy_ball(steps, x_0, m, M)
+    nesterov(steps, x_0, m, M)
+    chebyshev(steps, x_0, m, M)
 
 
 if __name__ == '__main__':
